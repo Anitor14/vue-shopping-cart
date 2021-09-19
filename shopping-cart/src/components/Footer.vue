@@ -29,6 +29,9 @@ export default {
   background-color: #56ccf2;
   color: white;
   padding: 0.25em 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .main-footer-container {
   display: flex;

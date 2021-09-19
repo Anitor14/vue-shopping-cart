@@ -1,7 +1,7 @@
 <template>
   <body>
     <Header title="SHOPPING CART" />
-    <Section />
+    <Section :cards="cards"/>
     <Checkout />
     <Footer />
   </body>
@@ -10,8 +10,8 @@
 <script>
 import Header from "./components/Header";
 import Section from "./components/Section";
-import Checkout from "./components/Checkout"
-import Footer from "./components/Footer"
+import Checkout from "./components/Checkout";
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
@@ -19,13 +19,29 @@ export default {
     Header,
     Section,
     Checkout,
-    Footer
+    Footer,
+  },
+  data() {
+    return {
+      cards: [],
+    };
+  },
+  methods: {
+    async fetchCards() {
+      const res = await fetch("http://localhost:3000/products");
+      const data = await res.json();
+
+      return data;
+    },
+  },
+  async created() {
+    this.cards = await this.fetchCards();
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Metal+Mania");
 
 * {
@@ -34,7 +50,7 @@ export default {
   padding: 0;
 }
 body {
-  font-family: Arial, Helvetica , sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: white;
   width: 100%;
 }

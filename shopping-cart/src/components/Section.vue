@@ -1,32 +1,32 @@
 <template>
-    <div class="section">
-        <Card />
+  <div class="section">
+    <div :key="card.id" v-for="card in cards">
+      <Card :card="card" />
     </div>
+  </div>
 </template>
 
 <script>
-import Card from "./Card"
+import Card from "./Card";
 export default {
-    name:'Section',
-    components:{
-        Card,
-    }
-}
+  name: "Section",
+  props: {
+    cards: Array,
+  },
+  components: {
+    Card,
+  },
+};
 </script>
 
 <style scoped>
-.section{
-    padding-top: 50px;
-    display: flex;
-    margin: 10px;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    margin: auto;
-    background-position: center;
-    background-size: cover;
-    background-position-y: 50%;
-    background-position-y: 50%;
-    background-color: white;
+.section {
+  padding-top: 50px;
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
 }
 </style>

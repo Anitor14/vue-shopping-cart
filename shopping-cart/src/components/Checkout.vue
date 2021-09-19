@@ -21,6 +21,13 @@ export default {
 };
 </script>
 <style scoped>
+.section-header{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    /* margin: 10px auto; */
+    padding-top: 10px;
+}
 .cart-header {
   font-weight: bold;
   font-size: 1.25rem;
