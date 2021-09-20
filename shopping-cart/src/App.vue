@@ -1,8 +1,8 @@
 <template>
   <body>
     <Header title="SHOPPING CART" />
-    <Section :cards="cards"/>
-    <Checkout />
+    <Section @addToCart="addToCart" :cards="cards" />
+    <Checkout :card="card" />
     <Footer />
   </body>
 </template>
@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       cards: [],
+      card: {},
     };
   },
   methods: {
@@ -33,9 +34,32 @@ export default {
 
       return data;
     },
+    async addToCart(id) {
+      const res = await fetch(`http://localhost:3000/products/${id}`);
+      const data = await res.json();
+      const newData = await this.newData(data);
+      return newData;
+      console.log(newData);
+      // console.log(newData);
+
+      // const postChange = await fetch(`http://localhost:3000/products/${id}`, {
+      //   method: "PUT",
+      //   headers: {
+      //     "Content-type": "application/json",
+      //   },
+      //   body: JSON.stringify(newData),
+      // });
+      // console.log(postChange);
+      // return postChange;
+    },
+    async newData(data) {
+      const updCards = { ...data, status: !data.status };
+      return updCards;
+    },
   },
   async created() {
     this.cards = await this.fetchCards();
+    this.card = await this.addToCart();
   },
 };
 </script>

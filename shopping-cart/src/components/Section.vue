@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <div :key="card.id" v-for="card in cards">
-      <Card :card="card" />
+      <Card :card="card" @addToCart="$emit('addToCart',card.id)" />
     </div>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
   components: {
     Card,
   },
+  emits:['addToCart']
 };
 </script>
 

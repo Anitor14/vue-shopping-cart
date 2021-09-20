@@ -5,8 +5,9 @@
       "name": "Gaming Pad",
       "price": "5000",
       "color": "black",
-      "weight": "10kg", 
-      "image": "./assets/images/gaming.jpg"
+      "weight": "10kg",
+      "image": "../assets/images/gaming.jpg",
+      "status": true
     },
     {
       "id": 84,
@@ -14,7 +15,8 @@
       "price": "3000",
       "color": "silver",
       "weight": "20kg",
-      "image": "./assets/images/kettle.jpg"
+      "image": "../assets/images/kettle.jpg",
+      "status": true
     },
     {
       "id": 4583,
@@ -22,7 +24,8 @@
       "price": "4000",
       "color": "red",
       "weight": "30kg",
-      "image": "./assets/images/schoolbag.jpg"
+      "image": "../assets/images/schoolbag.jpg",
+      "status": true
     },
     {
       "id": 833245,
@@ -30,7 +33,8 @@
       "price": "50000",
       "color": "brown",
       "weight": "5kg",
-      "image": "./assets/images/slippers.jpg"
+      "image": "../assets/images/slippers.jpg",
+      "status": true
     },
     {
       "id": 288483,
@@ -38,7 +42,8 @@
       "price": "1000",
       "color": "indigo",
       "weight": "0.5kg",
-      "image": "./assets/images/nosemask.webp"
+      "image": "../assets/images/nosemask.webp",
+      "status": false
     },
     {
       "id": 45421583,
@@ -46,7 +51,8 @@
       "price": "200",
       "color": "yellow",
       "weight": "0.3kg",
-      "image": "./assets/images/banana.png"
+      "image": "../assets/images/banana.png",
+      "status": false
     },
     {
       "id": 485942859,
@@ -54,7 +60,8 @@
       "price": "500",
       "color": "red",
       "weight": "3$",
-      "image": "./assets/images/apple.jpg"
+      "image": "../assets/images/apple.jpg",
+      "status": true
     },
     {
       "id": 988437,
@@ -62,7 +69,8 @@
       "price": "100",
       "color": "black",
       "weight": "0.2kg",
-      "image": "./assets/images/pen.jpg"
+      "image": "../assets/images/pen.jpg",
+      "status": true
     },
     {
       "id": 996884,
@@ -70,7 +78,8 @@
       "price": "500000",
       "color": "black",
       "weight": "50kg",
-      "image": "./assets/images/television.jpg"
+      "image": "../assets/images/television.jpg",
+      "status": true
     },
     {
       "id": 8876348756,
@@ -78,7 +87,8 @@
       "price": "3000",
       "color": "purple",
       "weight": "1kg",
-      "image": "./assets/images/shirt.webp"
+      "image": "../assets/images/shirt.webp",
+      "status": true
     },
     {
       "id": 4756383992,
@@ -86,7 +96,8 @@
       "price": "110000",
       "color": "silver",
       "weight": "20kg",
-      "image": "./assets/images/laptop.jpg"
+      "image": "../assets/images/laptop.jpg",
+      "status": true
     }
   ]
 }

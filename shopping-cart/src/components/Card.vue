@@ -1,13 +1,13 @@
 <template>
   <div class="card" style="width:18rem">
     <img
-      :src="card.image"
+      src="../assets/images/nosemask.webp"
       class="card-img-top"
     />
     <div class="card-body">
         <h5 class="card-title">{{card.name}}</h5>
         <p class="card-price">{{`₦${card.price}`}}</p>
-        <a href="#" class="btn btn-primary btn-to-cart">Add to cart</a>
+        <a @click="$emit('addToCart',card.id)" href="#" class="btn btn-primary btn-to-cart">Add to cart</a>
     </div>
   </div>
 </template>

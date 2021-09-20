@@ -1,32 +1,24 @@
 <template>
-  <section class="container content-section">
-    <h2 class="section-header">CART</h2>
     <div class="cart-row">
-      <span class="cart-item cart-header cart-column">ITEM</span>
-      <span class="cart-price cart-header cart-column">PRICE</span>
-      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        <div class="cart-item cart-column">
+            <img src="../assets/images/apple.jpg" class="cart-item-image">
+            <span class="cart-item-title">{{card.name}}</span>
+        </div>
+        <span class="cart-price cart-column">{{card-price}}</span>
+        <div class="cart-quantity cart-column">
+            <input type="number" class="cart-quantity-input" value="1">
+            <button class="btn btn-danger" type="button">Remove</button>
+        </div>
     </div>
-    <CartRow :card="card" />
-    <div class="cart-items"></div>
-    <div class="cart-total">
-      <strong class="cart-total-title">Total</strong>
-      <span class="cart-total-price">₦0</span>
-    </div>
-    <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-  </section>
 </template>
 
 <script>
-import CartRow from "./CartRow"
 export default {
-  name: "Checkout",
-  components:{
-      CartRow,
-  },
-  props:{
-      card:Object
-  }
-};
+    name:"CartRow",
+    props:{
+        card:Object,
+    }
+}
 </script>
 <style scoped>
 .section-header{
