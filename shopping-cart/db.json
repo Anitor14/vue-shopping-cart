@@ -34,7 +34,7 @@
       "color": "brown",
       "weight": "5kg",
       "image": "../assets/images/slippers.jpg",
-      "status": true
+      "status": false
     },
     {
       "id": 288483,
@@ -43,7 +43,7 @@
       "color": "indigo",
       "weight": "0.5kg",
       "image": "../assets/images/nosemask.webp",
-      "status": false
+      "status": true
     },
     {
       "id": 45421583,
@@ -52,7 +52,7 @@
       "color": "yellow",
       "weight": "0.3kg",
       "image": "../assets/images/banana.png",
-      "status": false
+      "status": true
     },
     {
       "id": 485942859,
@@ -79,7 +79,7 @@
       "color": "black",
       "weight": "50kg",
       "image": "../assets/images/television.jpg",
-      "status": true
+      "status": false
     },
     {
       "id": 8876348756,
@@ -97,7 +97,7 @@
       "color": "silver",
       "weight": "20kg",
       "image": "../assets/images/laptop.jpg",
-      "status": true
+      "status": false
     }
   ]
 }

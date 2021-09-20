@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <div :key="card.id" v-for="card in cards">
-      <Card :card="card" @addToCart="$emit('addToCart',card.id)" />
+      <Card :card="card" @addToCart="$emit('addToCart',card.id,card.status)" />
     </div>
   </div>
 </template>

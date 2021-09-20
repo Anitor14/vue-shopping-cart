@@ -6,7 +6,10 @@
       <span class="cart-price cart-header cart-column">PRICE</span>
       <span class="cart-quantity cart-header cart-column">QUANTITY</span>
     </div>
-    <CartRow :card="card" />
+    <div :key="card.id" v-for="card in updatedCards">
+      <CartRow :card="card" />
+    </div>
+
     <div class="cart-items"></div>
     <div class="cart-total">
       <strong class="cart-total-title">Total</strong>
@@ -17,24 +20,24 @@
 </template>
 
 <script>
-import CartRow from "./CartRow"
+import CartRow from "./CartRow";
 export default {
   name: "Checkout",
-  components:{
-      CartRow,
+  components: {
+    CartRow,
   },
-  props:{
-      card:Object
-  }
+  props: {
+    updatedCards: Array,
+  },
 };
 </script>
 <style scoped>
-.section-header{
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-    /* margin: 10px auto; */
-    padding-top: 10px;
+.section-header {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  /* margin: 10px auto; */
+  padding-top: 10px;
 }
 .cart-header {
   font-weight: bold;
@@ -107,18 +110,18 @@ export default {
   margin-right: 10px;
 }
 .cart-total-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+  margin-right: 20px;
 }
 .cart-total-price {
-    color: #333;
-    font-size: 1.1em;
+  color: #333;
+  font-size: 1.1em;
 }
 .btn-purchase {
-    display: block;
-    margin: 40px auto 80px auto;
-    font-size: 1.75em;
+  display: block;
+  margin: 40px auto 80px auto;
+  font-size: 1.75em;
 }
 </style>

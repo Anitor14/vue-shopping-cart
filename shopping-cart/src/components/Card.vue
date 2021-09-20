@@ -7,7 +7,7 @@
     <div class="card-body">
         <h5 class="card-title">{{card.name}}</h5>
         <p class="card-price">{{`₦${card.price}`}}</p>
-        <a @click="$emit('addToCart',card.id)" href="#" class="btn btn-primary btn-to-cart">Add to cart</a>
+        <a @click="$emit('addToCart',card.id ,card.status)" href="#" class="btn btn-primary btn-to-cart">Add to cart</a>
     </div>
   </div>
 </template>

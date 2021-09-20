@@ -1,10 +1,10 @@
 <template>
-    <div class="cart-row">
+    <div class="cart-row" v-if="card.status === false">
         <div class="cart-item cart-column">
-            <img src="../assets/images/apple.jpg" class="cart-item-image">
+            <img :src="card.image" class="cart-item-image">
             <span class="cart-item-title">{{card.name}}</span>
         </div>
-        <span class="cart-price cart-column">{{card-price}}</span>
+        <span class="cart-price cart-column">{{`${convertToInteger(card-price)}`}}</span>   
         <div class="cart-quantity cart-column">
             <input type="number" class="cart-quantity-input" value="1">
             <button class="btn btn-danger" type="button">Remove</button>
@@ -17,6 +17,11 @@ export default {
     name:"CartRow",
     props:{
         card:Object,
+    },
+    methods:{
+      convertToInteger(string){
+        return parseInt(string);
+      }
     }
 }
 </script>
