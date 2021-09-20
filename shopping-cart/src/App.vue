@@ -2,7 +2,7 @@
   <body>
     <Header title="SHOPPING CART" />
     <Section @addToCart="addToCart" :cards="cards" />
-    <Checkout :updatedCards="updatedCards" />
+    <Checkout :updatedCards="updatedCards" @remove-card="removeCard" />
     <Footer />
   </body>
 </template>
@@ -64,6 +64,19 @@ export default {
       this.updatedCards = this.cards.map((card) =>
         card.id === id ? { ...card, status: data.status } : card
       );
+    },
+    async removeCard(id) {
+      console.log("the remove button is working");
+
+      const res = await fetch(`http://localhost:3000/products/${id}`, {
+        method: "DELETE",
+      });
+
+      res.status === 200
+        ? (this.updatedCards = this.updatedCards.filter(
+            (card) => card.id !== id
+          ))
+        : alert("Error request not working");
     },
   },
   async created() {
