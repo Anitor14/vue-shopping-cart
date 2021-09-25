@@ -31,6 +31,7 @@ export default {
     // This fetches the whole database
     async fetchCards() {
       const res = await fetch("http://localhost:3000/products");
+      // console.log(res);
       const data = await res.json();
       return data;
     },
@@ -46,6 +47,8 @@ export default {
       //   alert("You have alread added this to the cart")
       //   return
       // }
+      if(id == undefined) return;
+      console.log(id);
       let itemToAddToCart = await this.fetchCard(id);
       console.log(itemToAddToCart);
       const updCards = { ...itemToAddToCart, status: !itemToAddToCart.status };
@@ -81,6 +84,7 @@ export default {
   },
   async created() {
     this.cards = await this.fetchCards();
+    console.log(this.cards);
     this.updatedCards = await this.addToCart();
   },
 };

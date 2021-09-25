@@ -1,9 +1,6 @@
 <template>
   <div class="card" style="width:18rem">
-    <img
-      src="../assets/images/nosemask.webp"
-      class="card-img-top"
-    />
+    <img :src="card.image ? card.image : '../assets/images/gaming.jpg'" alt="" class="card-img-top" />
     <div class="card-body">
         <h5 class="card-title">{{card.name}}</h5>
         <p class="card-price">{{`₦${card.price}`}}</p>
@@ -14,9 +11,11 @@
 
 <script>
 export default {
-    name:"Card",
-    props:{
-        card:Object,
+    name: "Card",
+    props: {
+        card: Object,
+    },
+    methods: {
     }
 }
 </script>

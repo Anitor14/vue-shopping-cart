@@ -5,35 +5,35 @@
       "price": "5000",
       "color": "black",
       "weight": "10kg",
-      "image": "assets/images/gaming.jpg"
+      "image": "./assets/images/gaming.jpg"
     },
     {
       "name": "kettle",
       "price": "3000",
       "color": "silver",
       "weight": "20kg",
-      "image": "assets/images/kettle.jpg"
+      "image": "./assets/images/kettle.jpg"
     },
     {
       "name": "schoolbag",
       "price": "4000",
       "color": "red",
       "weight": "30kg",
-      "image": "assets/images/schoolbag.jpg"
+      "image": "./assets/images/schoolbag.jpg"
     },
     {
       "name": "slippers",
       "price": "50000",
       "color": "brown",
       "weight": "5kg",
-      "image": "assets/images/slippers.jpg"
+      "image": "./assets/images/slippers.jpg"
     },
     {
       "name": "nosemask",
       "price": "1000",
       "color": "indigo",
       "weight": "0.5kg",
-      "image": "assets/images/nosemask.webp"
+      "image": "./assets/images/nosemask.webp"
     },
     {
       "name": "banana",
