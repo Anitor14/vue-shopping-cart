@@ -4,7 +4,7 @@
             <img :src="card.image" class="cart-item-image">
             <span class="cart-item-title">{{card.name}}</span>
         </div>
-        <span class="cart-price cart-column">{{`₦${card.price}`}}</span>   
+        <span class="cart-price cart-column">{{`₦${multipliedAmount}`}}</span>   
         <div class="cart-quantity cart-column">
             <input type="number" class="cart-quantity-input" v-model="amount" @change="change" >
             <button class="btn btn-danger" type="button" @click ="$emit('remove-card',card.id)">Remove</button>
@@ -18,6 +18,7 @@ export default {
     data(){
       return{
         amount:1,
+        multipliedAmount: this.card.price * this.amount, 
       }
     },
     props:{
@@ -28,12 +29,24 @@ export default {
         return parseInt(string);
       },
       change(){
-        console.log(this.amount);
         if(this.amount < 1){
           this.amount=0;
         }
+
+        const priceDetails = this.multipliedAmount
+        console.log(priceDetails);
+
+        $this.emit('quantityChanged',priceDetails);
+        // $this.$emit('quantityChanged', priceDetails)
       }
     },
+    // created(){
+    //   this.amount = this.amount;
+    //   this.multipliedAmount = this.card.price * this.amount;
+    // },
+    updated(){
+      this.multipliedAmount = this.card.price * this.amount;
+    }
 }
 </script>
 <style scoped>

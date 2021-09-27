@@ -7,13 +7,13 @@
       <span class="cart-quantity cart-header cart-column">QUANTITY</span>
     </div>
     <div :key="card.id" v-for="card in cards">
-      <CartRow :card="card" @remove-card="$emit('remove-card',card.id)"/>
+      <CartRow :card="card" @remove-card="$emit('remove-card',card.id)" />
     </div>
 
     <div class="cart-items"></div>
     <div class="cart-total">
       <strong class="cart-total-title">Total</strong>
-      <span class="cart-total-price">{{total}}</span>
+      <span class="cart-total-price">{{`₦${total}`}}</span>
     </div>
     <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
   </section>
@@ -27,12 +27,17 @@ export default {
     return{
       total:5000
     }
-  }
+  },
   components: {
     CartRow,
   },
   props: {
     cards: Object,
+  },
+  methods:{
+    quantitychanged(priceDetails){
+      console.log(priceDetails);
+    }
   },
   emits:['remove-card']
 };
