@@ -2,7 +2,7 @@
   <body>
     <Header title="SHOPPING CART" />
     <Section @addToCart="addToCart" :cards="cards" />
-    <Checkout :updatedCards="updatedCards" @remove-card="removeCard" />
+    <Checkout :cards="cards" @remove-card="removeCard" />
     <Footer />
   </body>
 </template>
@@ -23,8 +23,8 @@ export default {
   },
   data() {
     return {
-      cards: [],
-      updatedCards: {},
+      cards: {},
+      // updatedCards: {},
     };
   },
   methods: {
@@ -33,6 +33,7 @@ export default {
       const res = await fetch("http://localhost:3000/products");
       // console.log(res);
       const data = await res.json();
+      // this.addToCart(id,status);
       return data;
     },
     // This fetches just a single database of the inputed id.
@@ -42,18 +43,20 @@ export default {
 
       return data;
     },
-    async addToCart(id) {
-      // if(status === false){
-      //   alert("You have alread added this to the cart")
-      //   return
-      // }
-      if(id == undefined) return;
-      console.log(id);
-      let itemToAddToCart = await this.fetchCard(id);
+    async addToCart(id,status) {
+      if(status === false){
+        alert("You have alread added this to the cart");
+        return
+      }
+      // if(id == undefined) return;
+      // console.log(id);
+
+      let itemToAddToCart = await this.fetchCard(id); // fetch the card with this id.
       console.log(itemToAddToCart);
-      const updCards = { ...itemToAddToCart, status: !itemToAddToCart.status };
+      const updCards = { ...itemToAddToCart, status: !itemToAddToCart.status }; // reverse the value of the status of the card.
       console.log(updCards);
 
+      //convert the value of this card in the database and fetch this database.
       const res = await fetch(`http://localhost:3000/products/${id}`, {
         method: "PUT",
         headers: {
@@ -62,31 +65,37 @@ export default {
         body: JSON.stringify(updCards),
       });
 
-      const data = await res.json();
-
-      this.updatedCards = this.cards.map((card) =>
-        card.id === id ? { ...card, status: data.status } : card
-      );
+      let data = await res.json();
+      console.log(data)
     },
     async removeCard(id) {
-      console.log("the remove button is working");
+      console.log("this card has been removed");
+      if(confirm('Are you sure you want to delete this item')){
+        let itemToAddToCart = await this.fetchCard(id); // fetch the card with this id.
+      console.log(itemToAddToCart);
+      const updCards = { ...itemToAddToCart, status: !itemToAddToCart.status }; // reverse the value of the status of the card.
+      console.log(updCards);
 
-      const res = await fetch(`http://localhost:3000/products/${id}`, {
-        method: "DELETE",
+        const res = await fetch(`http://localhost:3000/products/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(updCards),
       });
-
-      res.status === 200
-        ? (this.updatedCards = this.updatedCards.filter(
-            (card) => card.id !== id
-          ))
-        : alert("Error request not working");
+      }
     },
   },
+  
   async created() {
     this.cards = await this.fetchCards();
-    console.log(this.cards);
-    this.updatedCards = await this.addToCart();
   },
+  async beforeUpdate(){
+    this.cards = await this.fetchCards();
+  },
+  async updated(){
+    this.cards = await this.fetchCards();
+  }
 };
 </script>
 

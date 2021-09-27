@@ -6,7 +6,7 @@
       <span class="cart-price cart-header cart-column">PRICE</span>
       <span class="cart-quantity cart-header cart-column">QUANTITY</span>
     </div>
-    <div :key="card.id" v-for="card in updatedCards">
+    <div :key="card.id" v-for="card in cards">
       <CartRow :card="card" @remove-card="$emit('remove-card',card.id)"/>
     </div>
 
@@ -27,7 +27,7 @@ export default {
     CartRow,
   },
   props: {
-    updatedCards: Array,
+    cards: Object,
   },
   emits:['remove-card']
 };

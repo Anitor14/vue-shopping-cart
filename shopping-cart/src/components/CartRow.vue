@@ -4,7 +4,7 @@
             <img :src="card.image" class="cart-item-image">
             <span class="cart-item-title">{{card.name}}</span>
         </div>
-        <span class="cart-price cart-column">{{`${convertToInteger(card-price)}`}}</span>   
+        <span class="cart-price cart-column">{{card.price}}</span>   
         <div class="cart-quantity cart-column">
             <input type="number" class="cart-quantity-input" value="1">
             <button class="btn btn-danger" type="button" @click ="$emit('remove-card',card.id)">Remove</button>

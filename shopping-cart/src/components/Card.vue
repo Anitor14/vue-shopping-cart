@@ -4,7 +4,7 @@
     <div class="card-body">
         <h5 class="card-title">{{card.name}}</h5>
         <p class="card-price">{{`₦${card.price}`}}</p>
-        <a @click="$emit('addToCart',card.id ,card.status)" href="#" class="btn btn-primary btn-to-cart">Add to cart</a>
+        <a @click="$emit('addToCart', card.id ,card.status)" href="#" class="btn btn-primary btn-to-cart">Add to cart</a>
     </div>
   </div>
 </template>
@@ -29,8 +29,12 @@ export default {
     margin: 15px;
 }
 .card-img-top{
-    height: 100%;
+    height: 200px;
     width: 100%;
     object-fit: cover;
+    /* transform: scale(0.3); */
+}
+.card-img-top img {
+    
 }
 </style>
