@@ -53,6 +53,69 @@
       "image": "assets/images/television.jpg",
       "status": true,
       "id": 9
+    },
+    {
+      "name": "apple",
+      "price": "500",
+      "color": "red",
+      "weight": "50kg",
+      "image": "assets/images/apple.jpg",
+      "status": true,
+      "id": 10
+    },
+    {
+      "name": "laptop",
+      "price": "100000",
+      "color": "red",
+      "weight": "50kg",
+      "image": "assets/images/laptop.jpg",
+      "status": false,
+      "id": 11
+    },
+    {
+      "name": "kettle",
+      "price": "5000",
+      "color": "silver",
+      "weight": "50kg",
+      "image": "assets/images/kettle.jpg",
+      "status": true,
+      "id": 12
+    },
+    {
+      "name": "laptop",
+      "price": "100000",
+      "color": "silver",
+      "weight": "50kg",
+      "image": "assets/images/laptop.jpg",
+      "status": true,
+      "id": 13
+    },
+    {
+      "name": "School bag",
+      "price": "3000",
+      "color": "red",
+      "weight": "50kg",
+      "image": "assets/images/schoolbag.jpg",
+      "status": false,
+      "id": 14
+    },
+    {
+      "name": "shoe",
+      "price": "7000",
+      "color": "red",
+      "weight": "50kg",
+      "image": "assets/images/shoe.jpg",
+      "status": true,
+      "id": 15
+    },
+    {
+      "name": "shirt",
+      "price": "8000",
+      "color": "purple",
+      "weight": "50kg",
+      "image": "assets/images/shirt.webp",
+      "status": false,
+      "id": 16
     }
   ]
 }

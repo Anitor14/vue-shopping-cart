@@ -6,7 +6,7 @@
         </div>
         <span class="cart-price cart-column">{{card.price}}</span>   
         <div class="cart-quantity cart-column">
-            <input type="number" class="cart-quantity-input" value="1">
+            <input type="number" class="cart-quantity-input" v-model="amount" @change="change" >
             <button class="btn btn-danger" type="button" @click ="$emit('remove-card',card.id)">Remove</button>
         </div>
     </div>
@@ -15,14 +15,25 @@
 <script>
 export default {
     name:"CartRow",
+    data(){
+      return{
+        amount:1,
+      }
+    },
     props:{
         card:Object,
     },
     methods:{
       convertToInteger(string){
         return parseInt(string);
+      },
+      change(){
+        console.log(this.amount);
+        if(this.amount < 1){
+          this.amount=0;
+        }
       }
-    }
+    },
 }
 </script>
 <style scoped>

@@ -90,7 +90,7 @@ export default {
   async created() {
     this.cards = await this.fetchCards();
   },
-  async beforeUpdate(){
+  async mounted(){
     this.cards = await this.fetchCards();
   },
   async updated(){
