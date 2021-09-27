@@ -96,7 +96,7 @@
       "color": "red",
       "weight": "50kg",
       "image": "assets/images/schoolbag.jpg",
-      "status": false,
+      "status": true,
       "id": 14
     },
     {

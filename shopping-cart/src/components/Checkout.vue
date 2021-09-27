@@ -13,7 +13,7 @@
     <div class="cart-items"></div>
     <div class="cart-total">
       <strong class="cart-total-title">Total</strong>
-      <span class="cart-total-price">₦0</span>
+      <span class="cart-total-price">{{total}}</span>
     </div>
     <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
   </section>
@@ -23,6 +23,11 @@
 import CartRow from "./CartRow";
 export default {
   name: "Checkout",
+  data(){
+    return{
+      total:5000
+    }
+  }
   components: {
     CartRow,
   },
