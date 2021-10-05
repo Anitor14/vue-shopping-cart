@@ -10,7 +10,7 @@
             <button class="btn btn-danger" type="button" @click ="$emit('remove-card',card.id)">Remove</button>
         </div>
     </div>
-</template>
+// </template>
 
 <script>
 export default {
