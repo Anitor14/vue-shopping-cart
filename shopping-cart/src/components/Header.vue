@@ -11,7 +11,7 @@
 export default {
   name: "Header",
   props: {
-    title:String,
+    title: String,
   },
   components: {},
 };
@@ -26,7 +26,7 @@ export default {
   color: white;
   background: rgb(67, 67, 246);
   border-bottom: 2px solid black;
-   background-size: cover;
+  background-size: cover;
   background-position-y: 50%;
   background-repeat: no-repeat;
   color: rgb(255, 255, 255);
@@ -35,7 +35,7 @@ export default {
   border-bottom: 2px solid black;
   font-size: 20px;
 }
-.opening-pic{
+.opening-pic {
   min-height: 120px;
   background-image: url(../assets/images/freestocks-_3Q3tsJ01nc-unsplash.jpg);
   background-size: cover;

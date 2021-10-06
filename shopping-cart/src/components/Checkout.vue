@@ -7,7 +7,7 @@
       <span class="cart-quantity cart-header cart-column">QUANTITY</span>
     </div>
     <div :key="card.id" v-for="card in cards">
-      <CartRow :card="card" @remove-card="$emit('remove-card',card.id)" />
+      <CartRow :card="card" @remove-card="$emit('remove-card',card.id)" @quantityChanged="quantityChanged" />
     </div>
 
     <div class="cart-items"></div>
@@ -35,8 +35,8 @@ export default {
     cards: Object,
   },
   methods:{
-    quantitychanged(priceDetails){
-      console.log(priceDetails);
+    quantityChanged(priceDetails){
+      console.log(`the total price of this item is ${priceDetails}`);
     }
   },
   emits:['remove-card']

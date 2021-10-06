@@ -1,61 +1,73 @@
 <template>
-    <div class="cart-row" v-if="card.status === false">
-        <div class="cart-item cart-column">
-            <img :src="card.image" class="cart-item-image">
-            <span class="cart-item-title">{{card.name}}</span>
-        </div>
-        <span class="cart-price cart-column">{{`₦${multipliedAmount}`}}</span>   
-        <div class="cart-quantity cart-column">
-            <input type="number" class="cart-quantity-input" v-model="amount" @change="change" >
-            <button class="btn btn-danger" type="button" @click ="$emit('remove-card',card.id)">Remove</button>
-        </div>
+  <div class="cart-row" v-if="card.status === false">
+    <div class="cart-item cart-column">
+      <img :src="card.image" class="cart-item-image" />
+      <span class="cart-item-title">{{ card.name }}</span>
     </div>
-// </template>
+    <span class="cart-price cart-column">{{ `₦${multipliedAmount}` }}</span>
+    <div class="cart-quantity cart-column">
+      <input
+        type="number"
+        class="cart-quantity-input"
+        v-model="amount"
+        @change="change"
+      />
+      <button
+        class="btn btn-danger"
+        type="button"
+        @click="$emit('remove-card', card.id)"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+</template>
 
 <script>
 export default {
-    name:"CartRow",
-    data(){
-      return{
-        amount:1,
-        multipliedAmount: this.card.price * this.amount, 
+  name: "CartRow",
+  data() {
+    return {
+      amount: 1,
+      multipliedAmount: this.card.price * this.amount,
+    };
+  },
+  props: {
+    card: Object,
+  },
+  methods: {
+    convertToInteger(string) {
+      return parseInt(string);
+    },
+    change() {
+      if (this.amount < 1) {
+        this.amount = 0;
       }
-    },
-    props:{
-        card:Object,
-    },
-    methods:{
-      convertToInteger(string){
-        return parseInt(string);
-      },
-      change(){
-        if(this.amount < 1){
-          this.amount=0;
-        }
+      const priceDetails = this.multipliedAmount;
+      console.log(priceDetails);
 
-        const priceDetails = this.multipliedAmount
-        console.log(priceDetails);
-
-        $this.emit('quantityChanged',priceDetails);
-        // $this.$emit('quantityChanged', priceDetails)
-      }
+      this.$emit("quantityChanged", priceDetails);
+      // $this.emit("quantityChanged", priceDetails);
+      // $this.$emit('quantityChanged', priceDetails)
     },
-    // created(){
-    //   this.amount = this.amount;
-    //   this.multipliedAmount = this.card.price * this.amount;
-    // },
-    updated(){
-      this.multipliedAmount = this.card.price * this.amount;
-    }
-}
+  },
+  // created(){
+  //   this.amount = this.amount;
+  //   this.multipliedAmount = this.card.price * this.amount;
+  // },
+  updated() {
+    this.multipliedAmount = this.card.price * this.amount;
+  },
+};
 </script>
+
 <style scoped>
-.section-header{
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-    /* margin: 10px auto; */
-    padding-top: 10px;
+.section-header {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  /* margin: 10px auto; */
+  padding-top: 10px;
 }
 .cart-header {
   font-weight: bold;
@@ -128,18 +140,18 @@ export default {
   margin-right: 10px;
 }
 .cart-total-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+  margin-right: 20px;
 }
 .cart-total-price {
-    color: #333;
-    font-size: 1.1em;
+  color: #333;
+  font-size: 1.1em;
 }
 .btn-purchase {
-    display: block;
-    margin: 40px auto 80px auto;
-    font-size: 1.75em;
+  display: block;
+  margin: 40px auto 80px auto;
+  font-size: 1.75em;
 }
 </style>

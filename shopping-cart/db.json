@@ -96,7 +96,7 @@
       "color": "red",
       "weight": "50kg",
       "image": "assets/images/schoolbag.jpg",
-      "status": true,
+      "status": false,
       "id": 14
     },
     {
@@ -105,7 +105,7 @@
       "color": "red",
       "weight": "50kg",
       "image": "assets/images/shoe.jpg",
-      "status": false,
+      "status": true,
       "id": 15
     },
     {
@@ -114,8 +114,35 @@
       "color": "purple",
       "weight": "50kg",
       "image": "assets/images/shirt.webp",
-      "status": false,
+      "status": true,
       "id": 16
+    },
+    {
+      "name": "Apple airpods",
+      "price": "50000",
+      "color": "white",
+      "weight": "50kg",
+      "image": "assets/images/airpods.jpg",
+      "status": false,
+      "id": 17
+    },
+    {
+      "name": "camera",
+      "price": "90000",
+      "color": "purple",
+      "weight": "50kg",
+      "image": "assets/images/camera.jpg",
+      "status": false,
+      "id": 18
+    },
+    {
+      "name": "Iphone",
+      "price": "150000",
+      "color": "silver",
+      "weight": "50kg",
+      "image": "assets/images/iphone.jpg",
+      "status": false,
+      "id": 19
     }
   ]
 }
