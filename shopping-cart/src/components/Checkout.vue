@@ -37,6 +37,7 @@ export default {
   methods:{
     quantityChanged(priceDetails){
       console.log(`the total price of this item is ${priceDetails}`);
+      console.log()
     }
   },
   emits:['remove-card']
